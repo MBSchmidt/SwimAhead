@@ -1,0 +1,14 @@
+<form id="swimmingForm" action="http://www.collegeswimming.com" method="POST" target="_blank" onsubmit='submitSearch()'>
+    <input type="text" name="searchText" id="searchText" value=""/>
+    <input type="submit" value="Submit"/>
+    <input id="siteSearchUrl" name="siteSearchUrl" type="hidden" value="http://yboss.yahooapis.com/ysearch/limitedweb?format=xml&sites=www.apprenticesearch.com&q=testing"/>
+</form>
+
+<script>
+function submitSearch()
+{
+	q = document.getElementById("searchText").value;
+	document.getElementById("siteSearchUrl").value = 'http://yboss.yahooapis.com/ysearch/limitedweb?format=xml&sites=www.apprenticesearch.com&q=' + q;
+    return true;
+}
+</script> 
