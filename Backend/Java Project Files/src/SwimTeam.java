@@ -17,7 +17,10 @@ public class SwimTeam {
 	
 	// Creates a new blank swim team
 	public SwimTeam() {
-		
+		setTeamID(0);
+		setTeamName("");
+		setMenTeam(new Swimmer[0]);
+		setWomenTeam(new Swimmer[0]);
 	}
 	
 	// Creates a new swim team with all relevant data specified

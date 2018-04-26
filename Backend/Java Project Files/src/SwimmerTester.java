@@ -6,57 +6,68 @@ class SwimmerTester {
 
 	@Test
 	void testSwimmer() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		assertEquals(testSwimmer.getSwimmerID(), 0);
+		assertEquals(testSwimmer.getSwimmerName(), "");
+		assertEquals(testSwimmer.getIsMale(), false);
+		assertArrayEquals(testSwimmer.getAllEvents(), new Event[0]);
 	}
 
 	@Test
 	void testSwimmerIntStringBooleanEventArray() {
-		fail("Not yet implemented");
+		Event[] allEvents = new Event[5];
+		for (int x = 0; x < 5; ++x)
+			allEvents[x] = new Event(x, "event", new double[0], new int[0]);
+		Swimmer testSwimmer = new Swimmer(11943, "test swimmer", true, allEvents);
+		assertEquals(testSwimmer.getSwimmerID(), 11943);
+		assertEquals(testSwimmer.getSwimmerName(), "test swimmer");
+		assertTrue(testSwimmer.getIsMale());
+		assertArrayEquals(testSwimmer.getAllEvents(), allEvents);
 	}
 
 	@Test
 	void testGetSwimmerID() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetSwimmerID() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setSwimmerID(1234);
+		assertEquals(testSwimmer.getSwimmerID(), 1234);
 	}
 
 	@Test
 	void testGetSwimmerName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetSwimmerName() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setSwimmerName("Swimming rocks!");
+		assertEquals(testSwimmer.getSwimmerName(), "Swimming rocks!");
 	}
 
 	@Test
 	void testGetIsMale() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetIsMale() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setIsMale(true);
+		assertTrue(testSwimmer.getIsMale());
+		testSwimmer.setIsMale(false);
+		assertFalse(testSwimmer.getIsMale());
 	}
 
 	@Test
 	void testGetAllEvents() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetAllEvents() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		Event[] allEvents = new Event[5];
+		for (int x = 0; x < 5; ++x)
+			allEvents[x] = new Event(x, "event", new double[0], new int[0]);
+		testSwimmer.setAllEvents(allEvents);
+		assertArrayEquals(testSwimmer.getAllEvents(), allEvents);
 	}
 
 	@Test
 	void testAddEvent() {
-		fail("Not yet implemented");
+		Swimmer testSwimmer = new Swimmer();
+		assertArrayEquals(testSwimmer.getAllEvents(), new Event[0]);
+		double[] times = { 3.1, 6.8 };
+		int[] dates = { 10, 14 };
+		Event addEvent = new Event(4, "test", times, dates);
+		testSwimmer.addEvent(addEvent);
+		Event[] events = { addEvent };
+		assertArrayEquals(testSwimmer.getAllEvents(), events);
 	}
 
 }

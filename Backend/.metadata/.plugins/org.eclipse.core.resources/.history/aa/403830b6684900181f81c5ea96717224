@@ -1,0 +1,87 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SwimTeamTester {
+
+	@Test
+	void testSwimTeam() {
+		SwimTeam testTeam = new SwimTeam();
+		assertEquals(testTeam.getTeamID(), 0);
+		assertEquals(testTeam.getTeamName(), "");
+		assertArrayEquals(testTeam.getMenTeam(), new Swimmer[0]);
+		assertArrayEquals(testTeam.getWomenTeam(), new Swimmer[0]);
+	}
+
+	@Test
+	void testSwimTeamIntStringSwimmerArraySwimmerArray() {
+		Swimmer male1 = new Swimmer(0, "", true, new Event[0]);
+		Swimmer male2 = new Swimmer(1, "", true, new Event[0]);
+		
+		Swimmer female1 = new Swimmer(2, "", false, new Event[0]);
+		Swimmer female2 = new Swimmer(3, "", false, new Event[0]);
+		
+		Swimmer[] menTeam = { male1, male2 };
+		Swimmer[] womenTeam = { female1, female2 };
+		
+		SwimTeam testTeam = new SwimTeam(11943, "Testing team", menTeam, womenTeam);
+		assertEquals(testTeam.getTeamID(), 11943);
+		assertEquals(testTeam.getTeamName(), "Testing team");
+		assertArrayEquals(testTeam.getMenTeam(), menTeam);
+		assertArrayEquals(testTeam.getWomenTeam(), womenTeam);
+	}
+
+	@Test
+	void testGetTeamID() {
+		SwimTeam testTeam = new SwimTeam();
+		testTeam.setTeamID(13576);
+		assertEquals(testTeam.getTeamID(), 13576);
+	}
+
+	@Test
+	void testGetTeamName() {
+		SwimTeam testTeam = new SwimTeam();
+		testTeam.setTeamName("Test");
+		assertEquals(testTeam.getTeamName(), "Test");
+	}
+
+	@Test
+	void testGetMenTeam() {
+		Swimmer male1 = new Swimmer(0, "", true, new Event[0]);
+		Swimmer male2 = new Swimmer(1, "", true, new Event[0]);
+		Swimmer[] menTeam = { male1, male2 };
+		SwimTeam testTeam = new SwimTeam(11943, "Test", new Swimmer[0], new Swimmer[0]);
+		testTeam.setMenTeam(menTeam);
+		assertArrayEquals(testTeam.getMenTeam(), menTeam);
+		menTeam[1].setIsMale(false);
+		assertEquals(testTeam.getMenTeam()[1].getIsMale(), menTeam[1].getIsMale());
+		assertTrue(testTeam.getMenTeam()[1].getIsMale());
+		assertFalse(menTeam[1].getIsMale());
+	}
+
+	@Test
+	void testGetWomenTeam() {
+		Swimmer female1 = new Swimmer(0, "", false, new Event[0]);
+		Swimmer female2 = new Swimmer(1, "", false, new Event[0]);
+		Swimmer[] womenTeam = { female1, female2 };
+		SwimTeam testTeam = new SwimTeam(11943, "Test", new Swimmer[0], new Swimmer[0]);
+		testTeam.setWomenTeam(womenTeam);
+		assertArrayEquals(testTeam.getWomenTeam(), womenTeam);
+	}
+
+	@Test
+	void testSetWomenTeam() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testAddMenMember() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testAddWomenMember() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -6,62 +6,72 @@ class EventTester {
 
 	@Test
 	void testEvent() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		assertEquals(testEvent.getIdNum(), 0);
+		assertEquals(testEvent.getEventName(), "");
+		assertArrayEquals(testEvent.getDates(), new int[0]);
+		assertArrayEquals(testEvent.getTimes(), new double[0]);
 	}
 
 	@Test
 	void testEventIntStringDoubleArrayIntArray() {
-		fail("Not yet implemented");
+		double[] times = { 50.5, 49.8, 48.7, 51.5 };
+		int[] dates = { 102416, 110417, 121418, 031217 };
+		Event testEvent = new Event(1234, "200 Free", times, dates);
+		assertEquals(testEvent.getIdNum(), 1234);
+		assertEquals(testEvent.getEventName(), "200 Free");
+		assertArrayEquals(testEvent.getDates(), dates);
+		assertArrayEquals(testEvent.getTimes(), times);
 	}
 
 	@Test
 	void testGetIdNum() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetIdNum() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		testEvent.setIdNum(13576);
+		assertEquals(testEvent.getIdNum(), 13576);
 	}
 
 	@Test
 	void testGetEventName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetEventName() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		testEvent.setEventName("100 Back");
+		assertEquals(testEvent.getEventName(), "100 Back");
 	}
 
 	@Test
 	void testGetTimes() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetTimes() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		double[] times = { 10.4, 12.5, 8.6, 9.8 };
+		testEvent.setTimes(times);
+		assertArrayEquals(testEvent.getTimes(), times);
 	}
 
 	@Test
 	void testGetDates() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetDates() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		int[] dates = { 3, 7, 180, 42, 27 };
+		testEvent.setDates(dates);
+		assertArrayEquals(testEvent.getDates(), dates);
 	}
 
 	@Test
 	void testAddNewTime() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		double[] times = { 10.4, 12.5, 8.6, 9.8 };
+		double[] newTimes = { 10.4, 12.5, 8.6, 9.8, 8.6 };
+		testEvent.setTimes(times);
+		testEvent.addNewTime(8.6);
+		assertArrayEquals(testEvent.getTimes(), newTimes);
 	}
 
 	@Test
 	void testAddNewDate() {
-		fail("Not yet implemented");
+		Event testEvent = new Event();
+		int[] dates = { 3, 7, 180, 42, 27 };
+		int[] newDates = { 3, 7, 180, 42, 27, 35 };
+		testEvent.setDates(dates);
+		testEvent.addNewDate(35);
+		assertArrayEquals(testEvent.getDates(), newDates);
 	}
 
 }
