@@ -17,7 +17,10 @@ public class Event {
 	
 	// Creates a new blank Event
 	public Event() {
-		
+		setIdNum(0);
+		setEventName("");
+		setTimes(new double[0]);
+		setDates(new int[0]);
 	}
 	
 	// Creates a new Event with all relevant data specified

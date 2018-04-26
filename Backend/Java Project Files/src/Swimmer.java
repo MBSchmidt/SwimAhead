@@ -19,7 +19,10 @@ public class Swimmer {
 	
 	// Creates a new blank Swimmer
 	public Swimmer() {
-		
+		setSwimmerID(0);
+		setSwimmerName("");
+		setIsMale(false);
+		setAllEvents(new Event[0]);
 	}
 	
 	// Creates a new Swimmer with all relevant data specified

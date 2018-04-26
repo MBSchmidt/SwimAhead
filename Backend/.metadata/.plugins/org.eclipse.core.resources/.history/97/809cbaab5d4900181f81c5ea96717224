@@ -1,0 +1,71 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SwimmerTester {
+
+	@Test
+	void testSwimmer() {
+		Swimmer testSwimmer = new Swimmer();
+		assertEquals(testSwimmer.getSwimmerID(), 0);
+		assertEquals(testSwimmer.getSwimmerName(), "");
+		assertEquals(testSwimmer.getIsMale(), false);
+		assertArrayEquals(testSwimmer.getAllEvents(), new Event[0]);
+	}
+
+	@Test
+	void testSwimmerIntStringBooleanEventArray() {
+		Event[] allEvents = new Event[5];
+		for (int x = 0; x < 5; ++x)
+			allEvents[x] = new Event(x, "event", new double[0], new int[0]);
+		Swimmer testSwimmer = new Swimmer(11943, "test swimmer", true, allEvents);
+		assertEquals(testSwimmer.getSwimmerID(), 11943);
+		assertEquals(testSwimmer.getSwimmerName(), "test swimmer");
+		assertTrue(testSwimmer.getIsMale());
+		assertArrayEquals(testSwimmer.getAllEvents(), allEvents);
+	}
+
+	@Test
+	void testGetSwimmerID() {
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setSwimmerID(1234);
+		assertEquals(testSwimmer.getSwimmerID(), 1234);
+	}
+
+	@Test
+	void testGetSwimmerName() {
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setSwimmerName("Swimming rocks!");
+		assertEquals(testSwimmer.getSwimmerName(), "Swimming rocks!");
+	}
+
+	@Test
+	void testGetIsMale() {
+		Swimmer testSwimmer = new Swimmer();
+		testSwimmer.setIsMale(true);
+		assertTrue(testSwimmer.getIsMale());
+	}
+
+	@Test
+	void testGetAllEvents() {
+		Swimmer testSwimmer = new Swimmer();
+		Event[] allEvents = new Event[5];
+		for (int x = 0; x < 5; ++x)
+			allEvents[x] = new Event(x, "event", new double[0], new int[0]);
+		testSwimmer.setAllEvents(allEvents);
+		assertArrayEquals(testSwimmer.getAllEvents(), allEvents);
+	}
+
+	@Test
+	void testAddEvent() {
+		Swimmer testSwimmer = new Swimmer();
+		assertEquals(testSwimmer.getAllEvents(), new Event[0]);
+		double[] times = { 3.1, 6.8 };
+		int[] dates = { 10, 14 };
+		Event addEvent = new Event(4, "test", times, dates);
+		testSwimmer.addEvent(addEvent);
+		Event[] events = { addEvent };
+		assertArrayEquals(testSwimmer.getAllEvents(), events);
+	}
+
+}
