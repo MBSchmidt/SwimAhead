@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Choose an option in the drop-down list and display that option.</p>
+
+<form>
+  <select id="mySelect">
+    <option id="Case Western Reserve University">Case Western Reserve University</option>
+    <option id="University of Rochester">University of Rochester</option>
+    <option id="Brandeis University">Brandeis University</option>
+    <option id="Carnegie Mellon University">Carnegie Mellon University</option>
+    <option id="University of Chicago">University of Chicago</option>
+    <option id="Emory University">Emory University</option>
+    <option id="Washington University at Saint Louis">Washington University in Saint Louis</option>
+    <option id="University of New York">University of New York</option>
+
+  </select>
+</form>
+
++
+
+<form>
+  <select id="mySelect2">
+    <option id="Case Western Reserve University">Case Western Reserve University</option>
+    <option id="University of Rochester">University of Rochester</option>
+    <option id="Brandeis University">Brandeis University</option>
+    <option id="Carnegie Mellon University">Carnegie Mellon University</option>
+    <option id="University of Chicago">University of Chicago</option>
+    <option id="Emory University">Emory University</option>
+    <option id="Washington University at Saint Louis">Washington University in Saint Louis</option>
+    <option id="University of New York">University of New York</option>
+
+  </select>
+</form>
+<p>
+<p>
+<p>
+  <p>
+
+<p id="demo1"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect");
+    var i = x.selectedIndex;
+    document.getElementById("demo").innerHTML = x.options[i].text;
+}
+</script>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect2");
+    var i = x.selectedIndex;
+    document.getElementById("demo1").innerHTML = x.options[i].text;
+}
+</script>
+
+<button onclick="myFunction()">GO</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Team1 Wins!";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+</body>
+</html>
